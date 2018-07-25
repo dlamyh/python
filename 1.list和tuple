@@ -1,0 +1,35 @@
+###################list的使用#########################
+ 
+>>> classmates = ['Michael', 'Bob', 'Tracy']
+>>> classmates
+['Michael', 'Bob', 'Tracy']
+
+#1.获得元素个数
+#######len()函数可以获得list元素的个数
+#2.访问元素
+#######用索引来访问list中每一个位置的元素，记得索引是从0开始的
+>>> classmates[0]
+'Michael'
+>>> classmates[1]
+'Bob'
+>>> classmates[2]
+'Tracy'
+#######可以用-1做索引，直接获取最后一个元素
+>>> classmates[-1]
+'Tracy'
+#3.追加元素
+#######往list中追加元素到末尾
+>>> classmates.append('Adam')
+>>> classmates
+['Michael', 'Bob', 'Tracy', 'Adam']
+#4.插入元素
+#######把元素插入到指定的位置，比如索引号为1的位置
+>>> classmates.insert(1, 'Jack')
+>>> classmates
+['Michael', 'Jack', 'Bob', 'Tracy', 'Adam']
+#5.删除元素
+#######删除list的元素，用pop()方法，pop()不加参数默认删除最后一个元素
+>>> classmates.pop(1)
+'Jack'
+>>> classmates
+['Michael', 'Bob', 'Tracy']
