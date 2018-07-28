@@ -1,0 +1,44 @@
+#######对比list与generator
+>>> L = [x * x for x in range(10)]
+>>> L
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> g = (x * x for x in range(10))
+>>> g
+#######通过next()函数获得generator的下一个返回值
+#######使用for来获得generator的返回值
+>>> g = (x * x for x in range(10))
+>>> for n in g:
+...     print(n)
+
+
+
+#######斐波拉契数列 
+def fib(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        print(b)
+        a, b = b, a + b
+        n = n + 1
+    return 'done'
+######对比使用generator方法生成斐波拉契数列     
+ def fib(max):
+    n, a, b = 0, 0, 1
+    while n < max:
+        yield b
+        a, b = b, a + b
+        n = n + 1
+    return 'done'
+>>> for n in fib(6):
+...     print(n)
+    
+#######定义一个generator，依次返回数字1，3，5
+def odd():
+    print('step 1')
+    yield 1
+    print('step 2')
+    yield(3)
+    print('step 3')
+    yield(5)
+调用该generator时，首先要生成一个generator对象，然后用next()函数不断获得下一个返回值：
+
+
